@@ -1,0 +1,416 @@
+/* MAIN HEADER */
+
+#menuToggle {
+  display: none;
+  position: relative;
+  top: 35px;
+  left: 0px;
+
+  z-index: 1;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a {
+  text-decoration: none;
+  color: #232323;
+
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+  color: tomato;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: #cdcdcd;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -100px;
+  padding: 50px;
+  padding-top: 125px;
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+
+#main-header {
+  background: black;
+  color: white;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.main-nav__content {
+  height: 3.5rem;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links__list {
+  display: flex;
+  justify-content: space-between;
+  width: 18.75rem;
+}
+
+.nav-links__list li a:hover {
+  border-bottom: solid white 1px;
+}
+
+/* HERO */
+
+#hero {
+  background: url("../img/header.jpeg") top 15% right 1%;
+  height: 100vh;
+  position: relative;
+}
+
+.hero-slogan {
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+  color: white;
+  position: absolute;
+  right: 5rem;
+  bottom: 11rem;
+}
+
+.hero-header {
+  font-family: "Montserrat", sans-serif;
+}
+
+.hero-lead {
+  margin: 0;
+}
+
+/* Tribute */
+
+#tribute {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.tribute-text {
+  padding: 0 8rem;
+}
+
+.tribute-text h1 {
+  font-family: "Playfair Display";
+}
+
+.tribute-image {
+  height: 768px;
+}
+
+.tribute-image img {
+  filter: grayscale(100%);
+}
+
+/* Points */
+
+#points {
+  background: black;
+  color: white;
+  line-height: 1.5;
+}
+
+.points-content {
+  padding: 5rem 3rem;
+}
+
+.points-list {
+  display: flex;
+}
+
+.points-list .point {
+  padding: 14rem 2rem;
+  margin: 0 1rem;
+  border: solid 1px white;
+  border-radius: 10px;
+}
+
+/* Gallery */
+
+.gallery-images {
+  display: flex;
+}
+
+.gallery-images img {
+  width: 33.35%;
+}
+
+/* quote */
+
+#quote {
+  background: black;
+  color: white;
+}
+
+.quote-text {
+  padding: 20rem 15rem;
+}
+
+.quote-text h2 {
+  font-family: "Montserrat";
+  font-size: 2.5rem;
+}
+
+.quote-text p {
+  text-align: right;
+}
+
+/* contact */
+
+.contact-form {
+  padding: 6.5rem 0;
+}
+
+#contact h2 {
+  text-align: left;
+  font-size: 2rem;
+}
+
+.form-group {
+  margin: 1.5rem 0;
+}
+
+.form-group input,
+.form-group textarea {
+  font-family: inherit;
+  display: block;
+  width: 100%;
+  padding: 7px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border: 1px solid black;
+}
+
+.contact-form button {
+  display: block;
+  font: inherit;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  background: black;
+  color: white;
+  border-radius: 5px;
+}
+
+/* Footer */
+#main-footer {
+  padding: 2rem;
+  background: black;
+  color: white;
+}
+
+@media (max-width: 1200px) {
+  .tribute-text {
+    padding: 1.7rem;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1020px) {
+  #hero {
+    background: url("../img/header.jpeg") center center/cover;
+  }
+
+  #tribute {
+    display: block;
+  }
+
+  .tribute-text {
+    padding: 15rem 5rem;
+  }
+
+  .tribute-image {
+    height: 0;
+  }
+
+  .tribute-image img {
+    display: none;
+  }
+
+  .points-content {
+    padding: 3rem 0;
+  }
+
+  .points-list .point {
+    padding: 12rem 2rem;
+  }
+
+  .quote-text {
+    padding: 15rem 5rem;
+  }
+  .quote-text h2 {
+    font-family: "Montserrat";
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .points-list {
+    display: block;
+  }
+
+  .points-list .point {
+    padding: 12rem 1rem;
+    margin: 0;
+    border: none;
+    border-radius: 0px;
+  }
+
+  .points-list .point-2 {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+  }
+
+  .gallery-images {
+    flex-wrap: wrap;
+  }
+
+  .gallery-images img {
+    flex-grow: 1;
+  }
+}
+
+@media (max-width: 718px) {
+  #menuToggle {
+    display: block;
+  }
+
+  .main-nav__content {
+    margin: auto;
+    margin-bottom: 30px;
+    display: block;
+  }
+
+  .nav-links__list {
+    display: none;
+  }
+
+  .hero-slogan {
+    font-size: 2rem;
+    right: 3rem;
+    bottom: 11rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-slogan {
+    font-size: 1rem;
+    right: 3rem;
+    bottom: 11rem;
+  }
+
+  .tribute-text {
+    padding: 5rem 3rem;
+  }
+
+  .quote-text h2 {
+    font-family: "Montserrat";
+    font-size: 1rem;
+  }
+
+  .main-logo h2 {
+    margin-left: 3rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .main-logo h2 {
+    font-size: 17px;
+    margin-left: 3rem;
+  }
+
+  #menuToggle {
+    position: relative;
+    top: 32px;
+    left: 0px;
+  }
+
+  .main-nav__content {
+    height: 2.5rem;
+  }
+
+  .hero-slogan {
+    font-size: 1rem;
+    right: 1rem;
+    bottom: 11rem;
+  }
+}
